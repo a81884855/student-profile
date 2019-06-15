@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 class Grades extends React.Component{
   constructor(props){
@@ -8,14 +9,10 @@ class Grades extends React.Component{
   }
 
   handleKeyPress(e){
-    const { addTags, tags } = this.props;
+    const { addTags } = this.props;
     const { value, id } = e.target;
     if(e.key === "Enter" && value.length > 0 ){
       addTags(value, id)
-      tags.push(value)
-      this.setState({
-        tags,
-      })
       e.target.value = "";
     }
   }
@@ -23,7 +20,14 @@ class Grades extends React.Component{
   render(){
     const { grades, display, num } = this.props;
     const { tags } = this.props;
-    const tagsBar = tags.map((tag, index)=> <div className="tag" key={index}>{tag}</div>);
+    const tagsBar = tags.map((tag, index)=> 
+      <Button 
+        className="tag" 
+        key={index}
+        variant="success"
+        >
+        {tag}
+      </Button>);
     const grade = grades.map((grade,index)=> 
     <p key={index}>Test{index+1}: <span id="grade">{grade}%</span></p>)
     const gradeStyle = {
@@ -32,12 +36,12 @@ class Grades extends React.Component{
     return(
       <div className="grades" style={gradeStyle}>
         { grade } 
-        <div className="tagsBar">
-          { tagsBar }
-        </div>
+        <Row className="tagsBar">
+          {tagsBar}
+        </Row>
         <input 
-          className="addTags"
           id={num}
+          className="addTags"
           type="text" 
           placeholder="Add a tag" 
           onKeyPress={this.handleKeyPress.bind(this)}

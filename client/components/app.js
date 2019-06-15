@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import Student from './student';
+import { Container, Row } from 'react-bootstrap';
 
 class App extends React.Component{
   constructor(){
@@ -77,26 +78,28 @@ class App extends React.Component{
   render(){
     const { students } = this.state;
     return(
-      <div id="background">
-        <div id="board">
-          <input 
-            type="text" 
-            className="search"
-            placeholder="Search by name" 
-            onChange={this.searchByName.bind(this)}></input>
-          <input 
-            type="text" 
-            className="search"
-            placeholder="Search by tags" 
-            onChange={this.searchByTag.bind(this)}></input>
-          {students.map((student) => 
-            <Student 
-              data={student} 
-              key={student.id}
-              addTags={this.addTags.bind(this)}
-            />)}
-        </div>
-      </div>
+      <Container>
+        <Row className="justify-content-md-center">
+          <div id="board">
+            <input 
+              type="text" 
+              className="search"
+              placeholder="Search by name" 
+              onChange={this.searchByName.bind(this)}></input>
+            <input 
+              type="text" 
+              className="search"
+              placeholder="Search by tags" 
+              onChange={this.searchByTag.bind(this)}></input>
+            {students.map((student) => 
+              <Student 
+                data={student} 
+                key={student.id}
+                addTags={this.addTags.bind(this)}
+              />)}
+          </div>
+        </Row>
+      </Container>
     )
   }
 }

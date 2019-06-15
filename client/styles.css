@@ -1,6 +1,5 @@
 div#board{
-  width: 60vw;
-  margin: 8vh 0 0 20vw;
+  margin: 8vh 0 4vh 0;
   background: white;
   border-radius: 12px;
   border: 1px #D3D3D3	solid;
@@ -12,10 +11,9 @@ body{
 }
 
 div.student{
-  display: -webkit-box;
-  margin: 0 0 0 0;
-  border-top: 0.1vh #D3D3D3	solid;
-  padding: 3vh;
+  margin: 1.4vh 0 1.4vh 0;
+  border-bottom: 0.1vh #D3D3D3	solid;
+  display: -webkit-inline-box;
 }
 
 img{
@@ -27,6 +25,7 @@ img{
 
 div.studentInfo{
   margin: 0 0 0 3vw;
+  width: 70%;
 }
 
 h1{
@@ -35,16 +34,16 @@ h1{
 
 p{
   margin: 2px 0 2px 2vw;
-  font-size: 3.5vh;
+  font-size: 24px;
 }
 
-input.search{
-  margin: 0 0 0 0.2vw;
+input{
+  margin: 0.5vh 0 0 0.2vw;
   border: none;
   border-bottom: 1px solid #D3d3d3;
-  width: 58vw;
+  width: 48%;
   color: #D3d3d3;
-  font-size: 4vh;
+  font-size: 2vw;
   padding: 1.5vh 0 1.5vh 1vw;
 }
 
@@ -56,26 +55,26 @@ span#grade{
   margin: 0 0 0 2vw;
 }
 
-button.hide{
-  position: absolute;
-  right: 21vw;
-  margin: 2vh;
-}
-
-input.addTags{
-  margin: 2vh 0 0 2vw;
-}
-
-div.tag{
+button.tag{
   padding: 0.5vw 1.2vw 0.5vw 1.2vw;
-  font-size: 2vw;
-  background: #D3D3D3;
-  margin: 0 1vw 0 0;
-  width: 4vw;
+  font-size: 1.3vw;
+  margin: 1vh 0.5vw 1vh 0.5vw;
+  width: auto;
   text-align: -webkit-center;
   display: -webkit-inline-box;
 }
 
+button.btn-info{
+  margin: 1vh 0 0 0;
+}
+
 div.tagsBar{
   margin: 1.5vh 0 1.5vh 2vw;
+}
+
+input.addTags{
+  margin: 1.5vh 0 1.5vh 2vw;
+  width: 88%;
+  font-size: 1.5vw;
+  color: black;
 }
