@@ -1,6 +1,6 @@
 import React from 'react';
 import Grades from './grades';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 
 class Student extends React.Component{
   constructor(props){
